@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>promise 顺序加载图片</title>
+</head>
+<body>
+<div id="pics">
+<img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2095473240,3665022501&fm=26&gp=0.jpg" data-src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2427280154,4101530500&fm=26&gp=0.jpg" />
+<img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2095473240,3665022501&fm=26&gp=0.jpg" data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1366818873,4080537748&fm=26&gp=0.jpg" />
+<img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2095473240,3665022501&fm=26&gp=0.jpg" data-src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1309741115,836649703&fm=26&gp=0.jpg" />
+<img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2095473240,3665022501&fm=26&gp=0.jpg" data-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/%E7%9F%AD%E5%8F%91%E7%9F%AD%E5%8F%91" />
+</div>
+</body>
+</html>
+<script>
+    var imgs = document.getElementsByTagName("img");
+
+    for(let i = 0 ; i < imgs.length; i++){
+        const img = imgs[i];
+        const _src = img.getAttribute("data-src")
+        loadImg(_src).then(_img=>{
+            img.src = _src;
+        }).catch(err=>{
+            img.src = null;
+        })
+    }
+
+    function loadImg(src){
+        return new Promise((res,rej)=>{
+            const img = new Image();
+            img.src= src ;
+            img.onload = ()=>{
+                res(img);
+            };
+            img.onerror = ()=>{
+                rej("加载失败")
+            }
+        })
+    }
+
+
+
+</script>
+
