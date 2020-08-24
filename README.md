@@ -54,6 +54,9 @@ Promise.race() // 竞速，完成一个即可
 ### 补充资料
 [阮一峰Promise](https://es6.ruanyifeng.com/#docs/promise)
 
+### 从 Promise 理解javascript 事件循环机制
+#### [javascript-event-loop](https://github.com/wang90/Promise/blob/master/event-loop.html)
+#### [vue 中的 nextick](https://github.com/wang90/Promise/blob/master/vue-nextick.html)
 
 ### 利用 Promise 编程
 ##### [Promise实现图片懒加载](https://github.com/wang90/Promise/blob/master/load-image.html)
