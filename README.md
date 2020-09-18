@@ -11,7 +11,7 @@ Promise是一个对象，用来表示异步操作的最终完成(或失败)及�
    promise 采用观察者模式,用特定的方式来注册对应状态的事件处理函数   
 ``````
 //  雏形
-function Promise(fu) {
+function Promise(fn) {
     var val = null,
         callbacks = []; // 可能存在同时有多个回掉函数
     this.then = function(onFulfilled){
