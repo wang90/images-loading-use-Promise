@@ -25,8 +25,9 @@ function Promise(fn) {
     fn(resolve)
 }
 ``````
-通过es6实现一个promise
+###### 通过es6实现一个promise
 ``````
+// 定义
 class Promise1 {
    constructor ( fn ) {
       this.resolveFn = null;
@@ -49,7 +50,18 @@ class Promise1 {
    }
 }
 
-
+// 使用
+new Promise1((resolve,reject) =>{
+    console.log('new Promise1')
+    resolve(1);
+    reject(2);
+}).then(res => {
+    console.log('is running');
+}).catch(err=>{
+    console.log('is error')
+}).then(res=>{
+    console.log('is running2');
+})
 
 ``````
 4. Promise 有一下特点
