@@ -4,9 +4,9 @@
 1. 什么是Promise ?  
 Promise是一个对象，用来表示异步操作的最终完成(或失败)及其结果值。
 2. Promise 的三种状态
-- 进行中 pending
-- 完成 fulfilled  
-- 失败 rejected
+- 进行中&nbsp;&nbsp;pending
+- 完成&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fulfilled  
+- 失败&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rejected
 3. 实现方法
    promise 采用观察者模式,用特定的方式来注册对应状态的事件处理函数   
 ``````
@@ -25,7 +25,7 @@ function Promise(fn) {
     fn(resolve)
 }
 ``````
-###### 通过es6实现一个promise
+###### 通过es6实现一个 promise
 ``````
 // 定义
 class Promise1 {
@@ -51,15 +51,15 @@ class Promise1 {
 }
 
 // 使用
-new Promise1((resolve,reject) =>{
+new Promise1((resolve,reject) => {
     console.log('new Promise1')
     resolve(1);
     reject(2);
 }).then(res => {
     console.log('is running');
-}).catch(err=>{
+}).catch(err => {
     console.log('is error')
-}).then(res=>{
+}).then(res => {
     console.log('is running2');
 })
 
@@ -71,7 +71,7 @@ new Promise1((resolve,reject) =>{
 5. 缺点  
 首先，无法取消 Promise，一旦新建它就会立即执行，无法中途取消。其次，如果不设置回调函数，Promise 内部抛出的错误，不会反应到外部。第三，当处于 Pending 状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。
 
-6. 基本api   
+6. 基本 api   
 ``````
 Promise.resolve()
 
