@@ -28,7 +28,7 @@ function Promise(fn) {
 ###### 通过es6实现一个 promise
 ``````
 // 定义
-class Promise1 {
+class Promise {
    constructor ( fn ) {
       this.resolveFn = null;
       this.rejectFn = null;
@@ -42,17 +42,17 @@ class Promise1 {
    }
    then ( resolve ) {
       resolve(this.resolveFn)
-      return this;
+      return Promise;
    }
    catch ( reject ) {
       reject(this.rejectFn)
-      return this;
+      return Promise;
    }
 }
 
 // 使用
-new Promise1((resolve,reject) => {
-    console.log('new Promise1')
+new Promise((resolve,reject) => {
+    console.log('new Promise')
     resolve(1);
     reject(2);
 }).then(res => {
