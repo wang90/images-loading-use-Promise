@@ -98,4 +98,5 @@ Promise.race() // 竞速，完成一个即可
 #### [vue 中的 nextick](https://github.com/wang90/Promise/blob/master/vue-nextick.html)
 
 ### 利用 Promise 编程
-##### [Promise实现图片懒加载](https://github.com/wang90/Promise/blob/master/load-image.html)
+##### [Promise实现图片懒加载](./blob/master/顺序图片加载.html)
+##### [异步编程函数](./blob/master/异步编程函数.md)
