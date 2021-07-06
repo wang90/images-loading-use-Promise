@@ -85,9 +85,9 @@ Promise.prototype.then()
 
 Promise.prototype.catch()
 
-Promise.all() // 所有的完成
+Promise.all() // 全部模式，全部的完成返回
 
-Promise.race() // 竞速，完成一个即可
+Promise.race() // 竞速模式，完成一个即可返回
 ``````
 
 7. 规范表现形式
