@@ -1,6 +1,6 @@
 ## Vue 中的 NextTick
 ### nextTick 是什么？
-在 vue 官网中，提到 nextTick 是在异步更新队列中，vue.js 通常鼓励开发者使用“数据驱动”的方式思考代码，避免直接接触 DOM，但是我们经常会遇到数据变化之后等待试图没有刷新，这个时候我们就可以通过官方给予我们 Vue.nextTick(callback) api 进行时图的更新。所以我们可以理解为通过 nextTick 方法可以手动更新视图。另外在组建中我们可以使用 vm.$nextTick() 或者 this.$nextTick() 调用。另外官方解释道 $nextTick() 返回的是一个 Promise 对象，所以我们也可以在ES2017中通过 async/await 语法来使用它 await this.$nextTick() 。
+在 vue 官网中，提到 nextTick 是在异步更新队列中，vue.js 通常鼓励开发者使用“数据驱动”的方式思考代码，避免直接接触 DOM，但是我们经常会遇到数据变化之后等待试图没有刷新，这个时候我们就可以通过官方给予我们 Vue.nextTick(callback) api 进行时图的更新。所以我们可以理解为通过 nextTick 方法可以手动更新视图。另外在组建中我们可以使用 vm.$nextTick() 或者 this.$nextTick() 调用。另外官方解释道 $nextTick() 返回的是一个 Promise 对象，所以我们也可以在 ES2017 中通过 async/await 语法来使用它 await this.$nextTick() 。
 ### nextTick 如何实现的？
 通过上面官方的解释，其实 NextTick 最后返回的是一个 Promise 对象，那么我们就明白了，那么就属于一个微任务，好了那么我们看下 nextTick 的实现
 [!链接](https://github.com/vuejs/vue/blob/dev/src/core/util/next-tick.js)
